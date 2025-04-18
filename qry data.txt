@@ -1,0 +1,76 @@
+-- Tabla: rol
+CREATE TABLE rol (
+    id_rol INT(11) PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(50)
+);
+
+-- Tabla: usuarios
+CREATE TABLE usuarios (
+    id_usuario INT(11) PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(50),
+    apellido VARCHAR(50),
+    password VARCHAR(255),
+    email VARCHAR(150),
+    id_rol INT(11),
+    FOREIGN KEY (id_rol) REFERENCES rol(id_rol)
+);
+
+-- Tabla: categorias
+CREATE TABLE categorias (
+    id_categoria INT(11) PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(50)
+);
+
+CREATE TABLE libros (
+    id_libro INT(11) PRIMARY KEY AUTO_INCREMENT,
+    titulo VARCHAR(100),
+    autor VARCHAR(100),
+    anio_publicacion INT(11),
+    estado VARCHAR(20),
+    foto VARCHAR(255),
+    id_categoria INT(11),
+    cantidad INT(11),
+    descripcion TEXT,
+    estado_actual ENUM('Activo', 'Inactivo'),
+    puntuacion INT(11),
+    FOREIGN KEY (id_categoria) REFERENCES categorias(id_categoria)
+);
+
+
+-- Tabla: prestamos
+CREATE TABLE prestamos (
+    id_prestamo INT(11) PRIMARY KEY AUTO_INCREMENT,
+    id_externo INT(11),
+    id_libro INT(11),
+    fecha_prestamo DATE,
+    hora_prestamo TIME,
+    fecha_devolucion DATE,
+    observaciones TEXT,
+    FOREIGN KEY (id_externo) REFERENCES usuarios(id_usuario),
+    FOREIGN KEY (id_libro) REFERENCES libros(id_libro)
+);
+
+-- Tabla: historial_operaciones
+CREATE TABLE historial_operaciones (
+    id_historial INT(11) PRIMARY KEY AUTO_INCREMENT,
+    id_externo INT(11),
+    operacion VARCHAR(50),
+    fecha DATE,
+    hora TIME,
+    detalles TEXT,
+    id_prestamo INT(11),
+    FOREIGN KEY (id_externo) REFERENCES usuarios(id_usuario),
+    FOREIGN KEY (id_prestamo) REFERENCES prestamos(id_prestamo)
+);
+
+--para las pruevas te dejo estas dfos inyecciones de datos para pruevas 
+INSERT INTO rol (id_rol, nombre) VALUES
+(1, 'admin'),
+(2, 'empleado'),
+(3, 'usuario');
+
+
+INSERT INTO usuarios (id_usuario, nombre, apellido, password, id_rol, email) VALUES
+(3, 'Admin', 'Principal', '12345', 1, 'admin@gmail.com'),
+(4, 'Pedro', 'Gómez', '12345', 2, 'empleado@gmail.com'),
+(5, 'Ana', 'López', '12345', 3, 'usuario@gmail.com');

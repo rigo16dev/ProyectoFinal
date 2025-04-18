@@ -1,0 +1,366 @@
+/* Estilos generales */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f4f6;
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    overflow: hidden; /* evitar que el contenido desborde */
+}
+
+.sidebar {
+    background-color: #2c2f5e;
+    padding: 20px;
+    width: 220px;
+    color: white;
+    flex-shrink: 0;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1); /* opcional, para separar visualmente */
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #f3f4f6;
+    overflow: hidden;
+}
+
+.topbar {
+    position: relative;
+    z-index: 1;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    border-radius: 999px;
+    outline: none;
+}
+
+/* Perfil */
+.profile-pic img {
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 70px;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    z-index: 10;
+    width: 180px;
+}
+
+/* Panel admin */
+.admin-panel {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-input,
+.input-field {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    width: 100%;
+}
+
+.input-field.small {
+    width: 200px;
+}
+
+.btn {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background-color: #4a69bd;
+    color: white;
+}
+
+.btn-secondary {
+    background-color: #888;
+    color: white;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.styled-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.form-inline {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.alert-success {
+    background-color: #e0f9e0;
+    color: #2c7a2c;
+    padding: 10px;
+    border: 1px solid #a5d6a7;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+.scrollable {
+    max-height: calc(100vh - 120px); /* Ajusta seg$)A(2n altura del topbar */
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.scrollable::-webkit-scrollbar {
+    width: 6px;
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+    background: #bbb;
+    border-radius: 10px;
+}
+
+
+.alert-success {
+    background-color: #e0f9e0;
+    color: #2c7a2c;
+    padding: 10px 15px;
+    border: 1px solid #a5d6a7;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    transition: opacity 0.5s ease-out;
+}
+
+.alert-hide {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+
+/*escrol para las categorias */
+.orders {
+    flex: 2;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    overflow-y: auto;
+    max-height: calc(100vh - 160px); /* Ajustado seg$)A(2n tu topbar */
+}
+
+
+/*para el dise?o de el menu de libros */
+.header-acciones {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+}
+
+.btn-nuevo {
+    background-color: #2c2f79;
+    color: white;
+    padding: 10px 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-nuevo:hover {
+    background-color: #4045a1;
+}
+
+.tabla-libros {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px; /* espacio entre filas */
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.tabla-libros th, .tabla-libros td {
+    padding: 12px 20px; /* m$)A("s espacio horizontal */
+    text-align: left;
+    background-color: white;
+    border-bottom: 1px solid #eee;
+}
+
+.tabla-libros th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.tabla-libros td img {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.acciones {
+    display: flex;
+    gap: 10px;
+}
+
+
+
+.btn-editar,
+.btn-eliminar {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-editar i {
+    color: #ffc107;
+}
+
+.btn-eliminar i {
+    color: #dc3545;
+}
+
+
+/* ---------------- MODAL ---------------- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0; top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-contenido {
+    background-color: #ffffff;
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 15px;
+    width: 60%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+.cerrar {
+    color: #aaa;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cerrar:hover {
+    color: #000;
+}
+
+/* ---------------- FORMULARIO DENTRO DEL MODAL ---------------- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0; top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-contenido {
+    background-color: #ffffff;
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 15px;
+    width: 60%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+.formulario-libro {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.formulario-libro .form-group {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.formulario-libro input,
+.formulario-libro select,
+.formulario-libro textarea {
+    flex: 1;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.formulario-libro textarea {
+    resize: vertical;
+}
+
+.btn-agregar {
+    background-color: #2c2f79;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 200px;
+    align-self: flex-end;
+    margin-top: 10px;
+}
+
+.btn-agregar:hover {
+    background-color: #4045a1;
+}
+.sidebar.oculto {
+    display: none;
+}
