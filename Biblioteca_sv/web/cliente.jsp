@@ -86,8 +86,7 @@
 </div>
 
 
-    <%-- Comentario temporal para probar Git --%>
-
+   
 </section>
 
                 <!-- Contenido central -->

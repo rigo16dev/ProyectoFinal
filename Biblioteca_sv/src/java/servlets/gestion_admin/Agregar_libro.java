@@ -67,7 +67,7 @@ public class Agregar_libro extends HttpServlet {
                 return;
             }
 
-            if (!estado.equals("Normal") && !estado.equals("Da?ado")) {
+            if (!estado.equals("Normal") && !estado.equals("Malo")) {
                 response.sendRedirect("Administrador/Gestion_libros.jsp?mensaje=Error: Estado no v$)A("lido.");
                 return;
             }
