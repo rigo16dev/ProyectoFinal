@@ -87,7 +87,7 @@ public class Agregar_libro extends HttpServlet {
                 return;
             }
 
-            // Guardar imagen con nombre $)A(2nico
+            // Guardar imagen con nombre unico
             String uploadPath = getServletContext().getRealPath("/img/libros/");
             File uploadDir = new File(uploadPath);
             if (!uploadDir.exists()) {
@@ -97,7 +97,7 @@ public class Agregar_libro extends HttpServlet {
             String uniqueFileName = System.currentTimeMillis() + "_" + fileName;
             filePart.write(uploadPath + File.separator + uniqueFileName);
 
-            // Conexi$)A(.n e inserci(.n a base de datos
+            // Conexi$)A(.n e insercion a base de datos
             Class.forName("com.mysql.jdbc.Driver");
             try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/biblioteca_sv", "root", "")) {
 

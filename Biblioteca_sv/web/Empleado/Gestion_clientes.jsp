@@ -61,7 +61,7 @@
         </main>
     </div>
 
-    <!-- Scripts -->
+    <!-- Scripts para los desplieges de menu -->
     <script>
         const menuToggle = document.getElementById('menuToggle');
         const sidebar = document.getElementById('sidebar');

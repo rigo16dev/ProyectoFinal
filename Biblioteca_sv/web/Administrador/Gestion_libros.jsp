@@ -236,8 +236,8 @@ if (mensaje != null && !mensaje.isEmpty()) {
 </div>
 </div>
 
-    <!-- MODAL -->
-    <!-- MODAL AGREGAR LIBRO -->
+
+    <!-- MODAL PARA AGREGAR LIBROS DESDE EL ADMINISTRADOR Y EMPLEADO -->
     <div id="modalAgregarLibro" class="modal">
         <div class="modal-contenido">
             <span class="cerrar" onclick="cerrarModal()">&times;</span>
@@ -310,9 +310,8 @@ if (mensaje != null && !mensaje.isEmpty()) {
     </div>
 
 
-    <!-- MODAL EDITAR (corregido) -->
 
-    <!-- MODAL EDITAR (corregido) -->
+    <!-- MODAL PARA EDITAR LIBROS DESDE EL ADMINISTRADOR O EMPLEADO  -->
     <div id="modalEditarLibro" class="modal">
         <div class="modal-contenido">
             <span class="cerrar" onclick="cerrarModalEditar()">&times;</span>
@@ -386,7 +385,7 @@ if (mensaje != null && !mensaje.isEmpty()) {
         </div>
     </div>
 
-    <!-- Scripts se mantienen -->
+    <!-- Scripts para el despliege de menus y modales de la pagina-->
     <script>
         function abrirModalEditar(id, titulo, autor, anio, cantidad, descripcion, idCategoria, estado, estadoActual) {
             document.getElementById('editId').value = id;
@@ -397,7 +396,7 @@ if (mensaje != null && !mensaje.isEmpty()) {
             document.getElementById('editDescripcion').value = descripcion;
             document.getElementById('editCategoria').value = idCategoria;
             document.getElementById('editEstado').value = estado;
-            document.getElementById('editEstadoActual').value = estadoActual; // este es nuevo
+            document.getElementById('editEstadoActual').value = estadoActual;
             document.getElementById('modalEditarLibro').style.display = 'block';
         }
 
@@ -450,18 +449,19 @@ if (mensaje != null && !mensaje.isEmpty()) {
 
     </body>
 
+    <!-- Scripts para el sidebar de el usuario -->
     <script>
         const menuToggle = document.getElementById('menuToggle');
         const sidebar = document.getElementById('sidebar');
         const menuItems = document.querySelectorAll('.menu-item');
 
-        // Mostrar/ocultar sidebar y guardar estado
+        
         menuToggle.addEventListener('click', () => {
             sidebar.classList.toggle('hidden');
             localStorage.setItem("sidebar_oculto", sidebar.classList.contains("hidden"));
         });
 
-        // Restaurar estado al cargar
+        // restaurar estado al cargar
         window.addEventListener('DOMContentLoaded', () => {
             const oculto = localStorage.getItem("sidebar_oculto");
             if (oculto === "true") {
@@ -469,7 +469,7 @@ if (mensaje != null && !mensaje.isEmpty()) {
             }
         });
 
-        // Activar item activo (opcional)
+
         menuItems.forEach(item => {
             item.addEventListener('click', () => {
                 menuItems.forEach(i => i.classList.remove('active'));
@@ -477,9 +477,4 @@ if (mensaje != null && !mensaje.isEmpty()) {
             });
         });
     </script>
-
-
-
-
-
-    </html>
+</html>

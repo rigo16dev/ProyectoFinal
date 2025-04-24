@@ -100,7 +100,7 @@
     </script>
 
 
-    <%-- Para el icono desplegable --%>
+    <%-- Para el icono desplegable de el usuario--%>
     <script>
         const profileBtn = document.getElementById('profileBtn');
         const dropdownMenu = document.getElementById('dropdownMenu');
@@ -109,7 +109,7 @@
             dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
         });
 
-        // Opcional: cerrar si haces clic fuera del menú
+       
         window.addEventListener('click', function (e) {
             if (!profileBtn.contains(e.target)) {
                 dropdownMenu.style.display = 'none';

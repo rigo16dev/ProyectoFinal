@@ -54,7 +54,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
             return;
         }
 
-        // Imagen (opcional)
+        // Imagen
         Part imagenPart = request.getPart("imagen");
         String nombreImagen = null;
 

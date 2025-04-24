@@ -55,13 +55,13 @@
             </section>
 
             <section class="content-area">
-                <!-- Aquí se puede mostrar un resumen general -->
+                <!-- seccion principal -->
                 <h2>Bienvenido al panel de administración</h2>
             </section>
         </main>
     </div>
 
-    <!-- Scripts -->
+    <!-- Scripts para el despliege de menu -->
     <script>
         const menuToggle = document.getElementById('menuToggle');
         const sidebar = document.getElementById('sidebar');

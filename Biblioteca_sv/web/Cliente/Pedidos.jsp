@@ -18,7 +18,7 @@
         <a href="<%= request.getContextPath() %>/cliente.jsp">Inicio</a>
     </li>
 
-    <!-- Historial de Préstamos -->
+    <!-- Historial de Préstamos-->
     <li class="menu-item <%= request.getRequestURI().contains("Pedidos.jsp") ? "active" : "" %>">
         <a href="<%= request.getContextPath() %>/Cliente/Pedidos.jsp">Historial de Préstamos</a>
     </li>
@@ -40,7 +40,7 @@
 
             <!-- Contenido principal -->
             <main class="main-content">
-                <!-- Top bar -->
+                
                 <section class="topbar">
                     <div class="menu-icon" id="menuToggle">☰</div>
                     <div class="search-box">
@@ -99,7 +99,7 @@
     </script>
 
 
-    <%-- Para el icono desplegable --%>
+    <%-- Para el icono desplegable de elusuario--%>
     <script>
         const profileBtn = document.getElementById('profileBtn');
         const dropdownMenu = document.getElementById('dropdownMenu');
@@ -108,7 +108,6 @@
             dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
         });
 
-        // Opcional: cerrar si haces clic fuera del menú
         window.addEventListener('click', function (e) {
             if (!profileBtn.contains(e.target)) {
                 dropdownMenu.style.display = 'none';

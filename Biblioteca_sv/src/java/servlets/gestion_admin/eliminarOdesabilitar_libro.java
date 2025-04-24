@@ -22,7 +22,7 @@ public class eliminarOdesabilitar_libro extends HttpServlet {
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/biblioteca_sv", "root", "");
 
-            // Verificar si tiene pr$)A(&stamos
+            // Verificar si tiene prestamos
             String sqlCheck = "SELECT COUNT(*) FROM prestamos WHERE id_libro = ?";
             PreparedStatement psCheck = con.prepareStatement(sqlCheck);
             psCheck.setInt(1, idLibro);
